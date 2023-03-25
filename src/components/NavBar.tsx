@@ -1,13 +1,12 @@
 import { HStack, Image, Text } from "@chakra-ui/react";
 import logo from "../assets/chunkwallet.png";
+import ColorModeSwitch from "./ColorModeSwitch";
 
 const NavBar = () => {
   return (
-    <HStack>
-      <Image src={logo} boxSize={8} marginLeft={"10px"} marginY={"5px"} />
-      <Text fontWeight={"bold"} fontSize={"2xl"}>
-        Chunk Games
-      </Text>
+    <HStack justifyContent={"space-between"}>
+      <Image src={logo} boxSize={8} marginLeft={"10px"} marginY={"5px"}></Image>
+      <ColorModeSwitch />
     </HStack>
   );
 };
