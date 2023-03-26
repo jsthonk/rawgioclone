@@ -21,7 +21,10 @@ function App() {
       </GridItem>
       <Show above="lg">
         <GridItem paddingX={5} area="aside">
-          <GenreGrid onSelectGenre={(genre) => setSelectedGenre(genre)} />
+          <GenreGrid
+            selectedGenre={selectedGenre}
+            onSelectGenre={(genre) => setSelectedGenre(genre)}
+          />
         </GridItem>
       </Show>
 
