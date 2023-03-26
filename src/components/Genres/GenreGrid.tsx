@@ -26,7 +26,7 @@ const GenreGrid = ({ onSelectGenre, selectedGenre }: Props) => {
         {isLoading &&
           skeletons.map((skeleton) => <GenreCardSkeleton key={skeleton} />)}
         {data.map((genre) => (
-          <ListItem paddingY={2} key={genre.id}>
+          <ListItem marginTop={2} paddingY={2} key={genre.id}>
             <HStack>
               <Image
                 boxSize="32px"
