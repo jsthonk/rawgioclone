@@ -6,6 +6,9 @@ const NavBar = () => {
   return (
     <HStack justifyContent={"space-between"} padding={"10px"}>
       <Image src={logo} boxSize={8} marginLeft={"10px"} marginY={"5px"}></Image>
+      <Text fontWeight={"bold"} align={"center"} fontSize={20}>
+        Chunk Games - Rawg.io Clone
+      </Text>
       <ColorModeSwitch />
     </HStack>
   );
