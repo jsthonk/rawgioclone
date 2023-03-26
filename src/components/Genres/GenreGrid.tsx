@@ -1,4 +1,5 @@
 import {
+  Button,
   HStack,
   Image,
   List,
@@ -6,12 +7,15 @@ import {
   SimpleGrid,
   Text,
 } from "@chakra-ui/react";
-import useGenres from "../../hooks/useGenres";
+import useGenres, { Genre } from "../../hooks/useGenres";
 import getCroppedImageUrl from "../../services/image-url";
 import GenreCardSkeleton from "./GenreCardSkeleton";
-import GenresCard from "./GenresCard";
 
-const GenreGrid = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+const GenreGrid = ({ onSelectGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   return (
@@ -28,7 +32,13 @@ const GenreGrid = () => {
                 src={getCroppedImageUrl(genre.image_background)}
                 borderRadius={8}
               />
-              <Text fontSize={"lg"}>{genre.name} </Text>
+              <Button
+                onClick={() => onSelectGenre(genre)}
+                variant="link"
+                fontSize={"lg"}
+              >
+                {genre.name}
+              </Button>
             </HStack>
           </ListItem>
         ))}

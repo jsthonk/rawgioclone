@@ -5,10 +5,17 @@ import ColorModeSwitch from "./ColorModeSwitch";
 const NavBar = () => {
   return (
     <HStack justifyContent={"space-between"} padding={"10px"}>
-      <Image src={logo} boxSize={8} marginLeft={"10px"} marginY={"5px"}></Image>
-      <Text fontWeight={"bold"} align={"center"} fontSize={20}>
-        Chunk Games - Rawg.io Clone
-      </Text>
+      <HStack>
+        <Image
+          src={logo}
+          boxSize={8}
+          marginLeft={"10px"}
+          marginY={"5px"}
+        ></Image>
+        <Text fontWeight="extrabold" fontSize="xl">
+          Chunk Games
+        </Text>
+      </HStack>
       <ColorModeSwitch />
     </HStack>
   );
