@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   HStack,
   Image,
   List,
@@ -21,6 +22,7 @@ const GenreGrid = ({ onSelectGenre, selectedGenre }: Props) => {
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   return (
     <>
+      <Heading fontSize="2xl">Genres</Heading>
       {error && <Text>{error}</Text>}
       <List>
         {isLoading &&
@@ -30,6 +32,7 @@ const GenreGrid = ({ onSelectGenre, selectedGenre }: Props) => {
             <HStack>
               <Image
                 boxSize="32px"
+                objectFit="cover"
                 src={getCroppedImageUrl(genre.image_background)}
                 borderRadius={8}
               />
