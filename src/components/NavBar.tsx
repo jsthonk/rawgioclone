@@ -1,8 +1,13 @@
 import { HStack, Image, Text } from "@chakra-ui/react";
 import logo from "../assets/chunkwallet.png";
 import ColorModeSwitch from "./ColorModeSwitch";
+import SearchInput from "./SearchInput";
 
-const NavBar = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const NavBar = ({ onSearch }: Props) => {
   return (
     <HStack justifyContent={"space-between"} padding={"10px"}>
       <HStack>
@@ -12,9 +17,7 @@ const NavBar = () => {
           marginLeft={"10px"}
           marginY={"5px"}
         ></Image>
-        <Text fontWeight="extrabold" fontSize="xl">
-          Chunk Games
-        </Text>
+        <SearchInput onSearch={onSearch} />
       </HStack>
       <ColorModeSwitch />
     </HStack>
